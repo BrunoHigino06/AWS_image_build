@@ -1,0 +1,12 @@
+name: AmazonLinux2_ssm
+description: Execute a bash to install and start the ssm on the amazon line ami
+schemaVersion: 1.0
+phases:
+  - name: build
+    steps:
+      - name: UpdateOS
+        action: ExecuteBash
+        inputs:
+          commands:
+            - sudo yum update
+            - sudo yum upgrade -y
